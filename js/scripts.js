@@ -7,7 +7,7 @@ ROBERTPRUSSO = {
 			
 			$(function() {
 				// Responsive Text
-				$('#banner h1').fitText(1.5);
+				$('#banner h1').fitText(1.55);
 				// Navigation SubMenus
 				$('#nav-main li').hover(function() {
 					$(this).addClass('hovered');
