@@ -251,7 +251,7 @@ function create_servicetypes() {
      array(
          'hierarchical' => true,
          'labels' => $labels,
-         'rewrite' => array('slug' => ''),
+         'rewrite' => true,
          'show_ui' => true,
          'show_tagcloud' => true,
          'show_in_nav_menus' => true
