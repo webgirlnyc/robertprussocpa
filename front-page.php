@@ -105,9 +105,10 @@
                             </h2>
                         </header>
                         <ul class="resource-list">
-                           <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                           <li>Aliquam tincidunt mauris eu risus.</li>
-                           <li>Vestibulum auctor dapibus neque.</li>
+            				<?php $resource_query = new WP_Query(array('post_type' => 'resource', 'posts_per_page' => -1)); ?>
+            				<?php if ($resource_query->have_posts()) while ($resource_query->have_posts()) : $resource_query->the_post(); ?>
+							<li><a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'robertrusso_resource_file', true)); ?>"><?php the_title() ?>.</a></li>
+							<?php endwhile; ?>
                         </ul>
                     </section>
 					

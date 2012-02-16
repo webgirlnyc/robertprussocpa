@@ -260,6 +260,39 @@ function create_servicetypes() {
 flush_rewrite_rules( false );
 }
 
+// Post Type: Resources
+add_action( 'init', 'create_resources' );
+function create_resources() {
+    $labels = array(
+        'name' => _x('Resources', 'post type general name'),
+        'singular_name' => _x('Resource', 'post type singular name'),
+        'add_new' => _x('Add New', 'Resource'),
+        'add_new_item' => __('Add New Resource'),
+        'edit_item' => __('Edit Resource'),
+        'new_item' => __('New Resource'),
+        'view_item' => __('View Resource'),
+        'search_items' => __('Search Resources'),
+        'not_found' =>  __('No Resources found'),
+        'not_found_in_trash' => __('No Resources found in Trash'),
+        'parent_item_colon' => ''
+    );
+
+    $supports = array(
+        'title'
+    );
+
+    register_post_type( 'resource',
+        array(
+            'labels' => $labels,
+            'menu_position' => 5,
+            'public' => true,
+            'supports' => $supports,
+            'has_archive' => false
+        )
+    );
+flush_rewrite_rules( false );
+}
+
 
 /*
 
